@@ -12,7 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBOutlet weak var PATXTFLDStudentname: UITextField!
@@ -20,10 +19,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var PATXTFLDGPA: UITextField!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let y=Student()
+        y.studentName = PATXTFLDStudentname.text!
+        y.gpa = PATXTFLDGPA.text!
         let page2 = segue.destination as! PanelBViewController
-        page2.studentName = PATXTFLDStudentname.text!
-        page2.gpa = PATXTFLDGPA.text!
-        
+        page2.x = y
     }
 }
 

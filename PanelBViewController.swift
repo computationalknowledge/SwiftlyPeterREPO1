@@ -9,13 +9,14 @@
 import UIKit
 
 class PanelBViewController: UIViewController {
-    var studentName:String="";
-    var gpa:String="";
+   
+    var x = Student()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       PBTXTFLDStudentName.text = studentName
-        PBTXTFLDGPA.text = gpa 
+        
+        PBTXTFLDStudentName.text = x.studentName
+        PBTXTFLDGPA.text = x.gpa
     }
     
     @IBOutlet weak var PBTXTFLDStudentName: UITextField!
