@@ -1,0 +1,24 @@
+//
+//  ViewController.swift
+//  SliderAndStepperA
+//
+//  Created by Peter Sigurdson on 2020-02-27.
+//  Copyright © 2020 theprof. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+
+    @IBAction func stepper1(_ sender: UIStepper) {
+        slider1.value = Float(sender.value)
+    }
+    
+    @IBOutlet weak var slider1: UISlider!
+}
