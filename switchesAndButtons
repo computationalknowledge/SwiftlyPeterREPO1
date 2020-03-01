@@ -1,0 +1,73 @@
+//
+//  ViewController.swift
+//  Switches1
+//
+//  Created by Peter Sigurdson on 2020-03-01.
+//  Copyright © 2020 theprof. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    // IBO CONNECTIONS
+    
+    
+    @IBOutlet weak var DATAIBOOUTLET: UISwitch!
+    @IBAction func DATAIBOACTION(_ sender: UISwitch) {
+        // should we check the status of the button before enabling the labels?
+        if (DATAIBOOUTLET.isOn){
+            DATASTATUSLABEL.text = "Data Enabled";
+        } else {
+            DATASTATUSLABEL.text = "Data OFF";        }
+        
+    }
+    
+    @IBOutlet weak var PHONEIBOUTLET: UISwitch!
+    @IBAction func PHONEIBOACTION(_ sender: UISwitch) {
+        if (PHONEIBOUTLET.isOn){
+            cellphoneStatusLBL.text = "PHONE Enabled";
+        } else {
+            cellphoneStatusLBL.text = "PHONE OFF";        }
+    }
+    
+    @IBAction func BTNTURNAPON(_ sender: UIButton) {
+        // get a handle on the Switch:
+        DATAIBOOUTLET.isOn = false;
+        PHONEIBOUTLET.isOn=false;
+        cellphoneStatusLBL.text = "CELL PHONE OFF"
+        DATASTATUSLABEL.text = "Data is OFF"
+        
+    }
+    
+    @IBAction func BTNTURNAPOFF(_ sender: UIButton) {
+        DATAIBOOUTLET.isOn = true;
+        PHONEIBOUTLET.isOn=true;
+        cellphoneStatusLBL.text = "CELL PHONE ON"
+        DATASTATUSLABEL.text = "Data is ON"    }
+    
+    @IBOutlet weak var cellphoneStatusLBL: UILabel!
+    @IBOutlet weak var datastatusLBL: UILabel!
+    
+    @IBAction func TURNAPMODEON(_ sender: UIButton) {
+        DATAIBOOUTLET.isOn = false;
+        PHONEIBOUTLET.isOn = false;
+        cellphoneStatusLBL.text = "Cell Phone Status is OFF"
+        datastatusLBL.text = "Data Status is OFF"
+    }
+    
+    @IBAction func TURNAPMODEOFF(_ sender: UIButton) {
+        DATAIBOOUTLET.isOn = true;
+        PHONEIBOUTLET.isOn = true;    }
+    
+    
+    @IBOutlet weak var CELLPHONESTATUSLABEL: UILabel!
+    
+    @IBOutlet weak var DATASTATUSLABEL: UILabel!
+}
+
